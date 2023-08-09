@@ -63,7 +63,7 @@ class User extends Authenticatable
     ];
 
     /**
-     * @return HasMany
+     * @return HasMany<Folder>
      */
     public function folders(): HasMany
     {
@@ -71,7 +71,7 @@ class User extends Authenticatable
     }
 
     /**
-     * @return HasMany
+     * @return HasMany<Task>
      */
     public function tasks(): HasMany
     {

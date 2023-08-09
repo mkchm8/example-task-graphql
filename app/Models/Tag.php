@@ -32,7 +32,7 @@ class Tag extends Model
     ];
 
     /**
-     * @return BelongsToMany
+     * @return BelongsToMany<Task>
      */
     public function tasks(): BelongsToMany
     {
