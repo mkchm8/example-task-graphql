@@ -1,0 +1,21 @@
+extend type Query {
+    folderList(
+        input: FolderListInput!
+    ): FolderListResponse! @field(resolver: "App\\GraphQL\\Queries\\Folder\\FolderList")
+}
+
+input FolderListInput @validator {
+    userId: Int!
+}
+
+type FolderListResponse {
+    list: [Folder!]
+}
+
+type Folder {
+    id: ID!
+    userId: Int!
+    name: String!
+    createdAt: DateTime!
+    updatedAt: DateTime!
+}
