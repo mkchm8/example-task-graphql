@@ -52,7 +52,7 @@ class Task extends Model
     ];
 
     /**
-     * @return BelongsTo
+     * @return BelongsTo<User, self>
      */
     public function user(): BelongsTo
     {
@@ -60,7 +60,7 @@ class Task extends Model
     }
 
     /**
-     * @return BelongsTo
+     * @return BelongsTo<Folder, self>
      */
     public function folder(): BelongsTo
     {
@@ -68,7 +68,7 @@ class Task extends Model
     }
 
     /**
-     * @return BelongsToMany
+     * @return BelongsToMany<Tag>
      */
     public function tags(): BelongsToMany
     {

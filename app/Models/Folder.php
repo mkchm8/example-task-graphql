@@ -34,7 +34,7 @@ class Folder extends Model
     ];
 
     /**
-     * @return BelongsTo
+     * @return BelongsTo<User, self>
      */
     public function user(): BelongsTo
     {
