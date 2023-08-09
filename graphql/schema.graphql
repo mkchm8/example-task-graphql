@@ -39,3 +39,5 @@ type User {
     "When the account was last updated."
     updated_at: DateTime!
 }
+
+#import query/folderList.graphql
