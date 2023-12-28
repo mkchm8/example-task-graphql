@@ -40,4 +40,4 @@ type User {
     updated_at: DateTime!
 }
 
-#import query/folderList.graphql
+#import query/*.graphql
