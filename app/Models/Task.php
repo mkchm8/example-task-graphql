@@ -22,6 +22,7 @@ use Illuminate\Support\Carbon;
  * @property Carbon|null $deleted_at
  * @property Carbon $created_at
  * @property Carbon $updated_at
+ * @property User $user
  */
 class Task extends Model
 {
