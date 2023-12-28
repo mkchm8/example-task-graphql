@@ -1,0 +1,23 @@
+extend type Query {
+    folderDetail(
+        input: FolderDetailInput!
+    ): FolderDetailResponse! @field(resolver: "App\\GraphQL\\Queries\\Folder\\FolderDetail")
+}
+
+input FolderDetailInput @validator {
+    id: ID!
+}
+
+type FolderDetailResponse {
+    id: ID!
+    userId: Int!
+    name: String!
+    tasks: [ TasksInFolder! ]
+    createdAt: DateTime!
+    updatedAt: DateTime!
+}
+
+type TasksInFolder {
+    id: ID!
+    title: String!
+}
