@@ -16,7 +16,7 @@ final class FolderListInputValidator extends Validator
     public function rules(): array
     {
         return [
-            'userId' => ['required', 'int']
+            'userId' => ['required', 'int', 'exists:users,id']
         ];
     }
 }

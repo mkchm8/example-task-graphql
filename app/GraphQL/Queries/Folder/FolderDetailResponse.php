@@ -24,7 +24,7 @@ class FolderDetailResponse
             'tasks' => $folder->tasks
                 ->map(fn(Task $task) => [
                     'id' => $task->id,
-                    'title' => $task->user->name
+                    'title' => $task->title
                 ])
         ];
     }
