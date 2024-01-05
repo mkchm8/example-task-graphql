@@ -58,6 +58,9 @@
         ],
         "stan": [
             "./vendor/bin/phpstan analyse -c phpstan.neon --memory-limit=1G"
+        ],
+        "test": [
+            "./vendor/bin/sail php artisan test"
         ]
     },
     "extra": {

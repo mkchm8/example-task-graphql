@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Models;
 
-// use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -23,6 +23,7 @@ use Laravel\Sanctum\HasApiTokens;
  * @property Carbon|null $deleted_at
  * @property Carbon $created_at
  * @property Carbon $updated_at
+ * @property Collection<int, Folder> $folders
  */
 class User extends Authenticatable
 {

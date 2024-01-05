@@ -6,10 +6,8 @@ namespace App\GraphQL\Queries\Folder;
 
 use App\Models\Folder;
 use Illuminate\Database\Eloquent\Collection as EloquentCollection;
-use Illuminate\Support\Collection;
-use Illuminate\Support\Carbon;
 
-class FolderListResponse
+final class FolderListResponse
 {
     /**
      * @param EloquentCollection<int, Folder> $folderList

@@ -5,7 +5,7 @@ extend type Query {
 }
 
 input FolderListInput @validator {
-    userId: Int!
+    userId: ID!
 }
 
 type FolderListResponse {
