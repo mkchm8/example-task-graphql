@@ -1,7 +1,7 @@
 extend type Query {
     folderList(
         input: FolderListInput!
-    ): FolderListResponse! @field(resolver: "App\\GraphQL\\Queries\\Folder\\FolderList")
+    ): FolderListResponse! @guard(with: ["user"]) @field(resolver: "App\\GraphQL\\Queries\\Folder\\FolderList")
 }
 
 input FolderListInput @validator {

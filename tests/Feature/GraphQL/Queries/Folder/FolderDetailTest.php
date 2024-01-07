@@ -6,6 +6,8 @@ namespace Tests\Feature\GraphQL\Queries\Folder;
 
 use App\Models\Folder;
 use App\Models\Task;
+use App\Models\User;
+use Laravel\Sanctum\Sanctum;
 use Tests\Feature\GraphQL\GraphQLTestCase;
 
 /**
@@ -22,12 +24,15 @@ final class FolderDetailTest extends GraphQLTestCase
     public function test_フォルダ詳細取得API_成功(): void
     {
         // GIVEN
+        /** @var User $user */
+        $user = User::factory()->create();
+        Sanctum::actingAs(user: $user, guard: 'user');
+
         /** @var Folder $folder */
-        $folder = Folder::factory()->create();
+        $folder = Folder::factory()->for($user)->create();
 
         /** @var Task $task */
         $task = Task::factory()->for($folder)->create();
-
 
         // WHEN
         $response = $this->postGraphQL(
