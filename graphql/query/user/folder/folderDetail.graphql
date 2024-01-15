@@ -1,7 +1,7 @@
 extend type Query {
     folderDetail(
         input: FolderDetailInput!
-    ): FolderDetailResponse! @field(resolver: "App\\GraphQL\\Queries\\Folder\\FolderDetail")
+    ): FolderDetailResponse! @guard(with: ["user"]) @field(resolver: "App\\GraphQL\\Queries\\Folder\\FolderDetail")
 }
 
 input FolderDetailInput @validator {

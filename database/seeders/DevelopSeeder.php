@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Admin;
 use App\Models\Folder;
 use App\Models\Tag;
 use App\Models\Task;
@@ -24,5 +25,6 @@ class DevelopSeeder extends Seeder
                 )
             )
             ->create();
+        Admin::factory()->create();
     }
 }

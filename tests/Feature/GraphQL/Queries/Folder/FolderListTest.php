@@ -7,6 +7,7 @@ namespace Tests\Feature\GraphQL\Queries\Folder;
 use App\Models\Folder;
 use App\Models\Task;
 use App\Models\User;
+use Laravel\Sanctum\Sanctum;
 use Tests\Feature\GraphQL\GraphQLTestCase;
 
 /**
@@ -29,6 +30,7 @@ final class FolderListTest extends GraphQLTestCase
         $user = User::factory()->has(
             Folder::factory()->has(Task::factory())->count($folderCount)
         )->create();
+        Sanctum::actingAs(user: $user, guard: 'user');
 
         // WHEN
         $response = $this->postGraphQL(

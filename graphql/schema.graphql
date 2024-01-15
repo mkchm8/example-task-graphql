@@ -1,6 +1,8 @@
 "A datetime string with format `Y-m-d H:i:s`, e.g. `2018-05-23 13:43:32`."
 scalar DateTime @scalar(class: "Nuwave\\Lighthouse\\Schema\\Types\\Scalars\\DateTime")
 
+type Mutation
+
 "Indicates what fields are available at the top level of a query operation."
 type Query {
     "Find a single user by an identifying attribute."
@@ -40,4 +42,6 @@ type User {
     updated_at: DateTime!
 }
 
-#import query/*.graphql
+#import */*.graphql
+#import */*/*.graphql
+#import */*/*/*.graphql
